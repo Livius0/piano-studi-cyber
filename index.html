@@ -8,9 +8,8 @@
         /* SFONDO ANIMATO */
         body { 
             margin: 0; 
-            padding: 20px; 
+            padding: 40px 20px; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Gradiente animato tema Cyber/Dark */
             background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #001f3f, #0a0a2a);
             background-size: 400% 400%;
             animation: cyberBackground 15s ease infinite;
@@ -24,59 +23,61 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* CONTENITORE TRASPARENTE (Effetto Vetro) */
+        /* CONTENITORE TRASPARENTE */
         .glass-container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 15px;
-            padding: 25px;
+            padding: 30px;
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
         }
 
         h2 {
             text-align: center;
-            font-weight: 300;
+            font-weight: 400;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             color: #4facfe;
             text-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+            font-size: 28px;
         }
 
         /* MENU A SCOMPARSA (Accordion) */
         details {
-            background: rgba(0, 0, 0, 0.2);
-            margin-bottom: 12px;
+            background: rgba(0, 0, 0, 0.25);
+            margin-bottom: 15px;
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
 
         details[open] {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.5);
             border-color: #4facfe;
-            box-shadow: 0 0 15px rgba(79, 172, 254, 0.2);
+            box-shadow: 0 0 15px rgba(79, 172, 254, 0.15);
         }
 
         summary {
-            padding: 18px 20px;
+            padding: 20px 25px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 17px;
             font-weight: 600;
-            list-style: none; /* Nasconde la freccia di default */
+            list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
             outline: none;
+            color: #e2e8f0;
+            letter-spacing: 0.5px;
         }
 
-        summary::-webkit-details-marker { display: none; } /* Nasconde la freccia su Safari */
+        summary::-webkit-details-marker { display: none; }
 
-        /* Icona + e - personalizzata */
         summary::after {
             content: '+';
             font-size: 24px;
@@ -85,12 +86,12 @@
         }
 
         details[open] summary::after {
-            transform: rotate(45deg); /* Trasforma il + in una X */
+            transform: rotate(45deg);
         }
 
-        /* STILE DELLE RIGHE DEI MODULI */
+        /* LISTA DEI MODULI */
         .module-list {
-            padding: 0 20px 20px;
+            padding: 0 25px 25px;
             margin: 0;
             list-style: none;
         }
@@ -98,25 +99,32 @@
         .module-item {
             display: flex;
             justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             font-size: 15px;
-            color: #d1d5db;
+            color: #cbd5e1;
+            line-height: 1.4;
         }
 
         .module-item:last-child {
             border-bottom: none;
         }
 
+        .module-text {
+            padding-right: 20px;
+        }
+
         .hours-badge {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             color: #000;
             font-weight: bold;
-            padding: 3px 10px;
+            padding: 4px 12px;
             border-radius: 20px;
             font-size: 13px;
             min-width: 35px;
             text-align: center;
+            flex-shrink: 0;
         }
 
         /* RIGA DEL TOTALE */
@@ -124,15 +132,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 30px;
-            padding: 20px;
+            margin-top: 40px;
+            padding: 25px;
             background: rgba(0, 242, 254, 0.1);
             border: 1px solid rgba(0, 242, 254, 0.3);
             border-radius: 10px;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
             color: #00f2fe;
-            text-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
         }
     </style>
 </head>
@@ -144,167 +152,231 @@
         <details>
             <summary>Orientamento</summary>
             <ul class="module-list">
-                <li class="module-item"><span>Orientamento in entrata</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Orientamento in uscita (preparazione allo stage)</span> <span class="hours-badge">16h</span></li>
+                <li class="module-item"><span class="module-text">Orientamento in entrata</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Orientamento in uscita (preparazione allo stage)</span> <span class="hours-badge">16h</span></li>
             </ul>
         </details>
 
         <details>
             <summary>Sicurezza sul lavoro</summary>
             <ul class="module-list">
-                <li class="module-item"><span>Sicurezza sul lavoro</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Sicurezza sul lavoro</span> <span class="hours-badge">8h</span></li>
             </ul>
         </details>
 
         <details>
-            <summary>Soft skills</summary>
+            <summary>Soft skyll</summary>
             <ul class="module-list">
-                <li class="module-item"><span>Modulo di allineamento in Inglese, Orientamento finanziario, Inglese</span> <span class="hours-badge">52h</span></li>
+                <li class="module-item"><span class="module-text">Modulo di allineamento in Inglese, Orientamento finanziario, Inglese</span> <span class="hours-badge">52h</span></li>
             </ul>
         </details>
 
         <details>
             <summary>Competenze informatiche</summary>
             <ul class="module-list">
-                <li class="module-item"><span>Fondamenti di informatica, di telecomunicazioni e MS e fondamenti di Excell</span> <span class="hours-badge">54h</span></li>
+                <li class="module-item"><span class="module-text">Fondamenti di informatica, di telecomunicazioni e MS e fondamenti di Excell</span> <span class="hours-badge">54h</span></li>
             </ul>
         </details>
 
         <details>
             <summary>Sistemistica - Reti - linux</summary>
             <ul class="module-list">
-                <li class="module-item"><span>Sistemistica - Reti - linux</span> <span class="hours-badge">36h</span></li>
+                <li class="module-item"><span class="module-text">Sistemistica - Reti - linux</span> <span class="hours-badge">36h</span></li>
             </ul>
         </details>
 
         <details>
             <summary>Normative e adempimenti nazionali e comunitari</summary>
             <ul class="module-list">
-                <li class="module-item"><span>Architettura europea e nazionale di sicurezza cibernetica</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Strategia UE per la cybersicurezza: il Cyber Security Act</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Protezione delle reti e dei dati: Direttiva NIS</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Perimetro di sicurezza nazionale cibernetica</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Poteri speciali del governo: la Golden Power</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Elementi di Diritto Costituzionale e Comunitario</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Privacy: evoluzione storica, d.lgd 196/2003 e GDPR</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>GDPR: i nuovi diritti con l'evoluzione delle ICT</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Cloud first: rischi e opportunità</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>I pericoli della infodemia: disinformazione e misinformazione</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Partenariato pubblico/privato: l'importanza dell'infosharing</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Laboratorio pratico di GDPR</span> <span class="hours-badge">16h</span></li>
+                <li class="module-item"><span class="module-text">Architettura europea e nazionale di sicurezza cibernetica</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Strategia UE per la cybersicurezza: il Cyber Security Act</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Protezione delle reti e dei dati: Direttiva NIS</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Perimetro di sicurezza nazionale cibernetica</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Poteri speciali del governo: la Golden Power</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Elementi di Diritto Costituzionale e Comunitario</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Privacy: evoluzione storica, d.lgd 196/2003 e GDPR</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">GDPR: i nuovi diritti con l'evoluzione delle ICT</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Cloud first: rischi e opportunità</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">I pericoli della infodemia: disinformazione e misinformazione</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Partenariato pubblico/privato: l'importanza dell'infosharing</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Laboratorio pratico di GDPR</span> <span class="hours-badge">16h</span></li>
             </ul>
         </details>
 
         <details>
             <summary>Fondamenti di IT Security</summary>
             <ul class="module-list">
-                <li class="module-item"><span>Principi generali di cyber-security</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>La sicurezza fisica e logica</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Il controllo degli accessi</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Identificazione, Autenticazione, Autorizzazione e Accounting (AAA)</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Identità e Gestione degli Accessi (IAM)</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Autenticazione multi-fattore</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Sicurezza dell'hardware e del firmware: test di sicurezza</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Cenni ai principali framework di sicurezza</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Principi generali di cyber-security</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">La sicurezza fisica e logica</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Il controllo degli accessi</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Identificazione, Autenticazione, Autorizzazione e Accounting (AAA)</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Identità e Gestione degli Accessi (IAM)</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Autenticazione multi-fattore</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Sicurezza dell'hardware e del firmware: test di sicurezza</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Cenni ai principali framework di sicurezza (CIS 20, NIST cybersecurity framework, ISO 27001, ENISA, ...)</span> <span class="hours-badge">8h</span></li>
             </ul>
         </details>
 
         <details>
             <summary>I reati informatici</summary>
             <ul class="module-list">
-                <li class="module-item"><span>Introduzione e inquadramento giuridico del cybercrime</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Contrasto al cyber-crime: Polizia Postale</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Reato di intrusione informatica</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Reati contro la persona attraverso i social network</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Pedopornografia e reati contro i minori online</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Aspetti psicologici del Cybercrime</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Cyber-terrorismo</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Attacchi alle infrastrutture critiche informatizzate</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Financial cyber crime</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Reati contro il patrimonio: phishing, truffe, criptovalute</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Cooperazione bancaria nazionale e internazionale</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Reati informatici 4.0: il ruolo del metaverso</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Introduzione e inquadramento giuridico del cybercrime</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Contrasto al cyber-crime: il ruolo della Polizia Postale e delle Comunicazioni</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Reato di intrusione informatica</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Reati contro la persona attraverso i social network</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Pedopornografia e reati contro i minori online</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Aspetti psicologici del Cybercrime</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Cyber-terrorismo</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Attacchi alle infrastrutture critiche informatizzate</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">La cooperazione internazionale di polizia nella lotta al crimine informatico</span> <span class="hours-badge">-</span></li>
+                <li class="module-item"><span class="module-text">Financial cyber crime</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Reati contro il patrimonio: phishing, truffe online, riciclaggio e criptovalute</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">I reati contro il patrimonio: cooperazione bancaria nazionale e internazionale progetto UEOF2CEN</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">I reati contro il patrimonio: riciclaggio e criptovalute</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Reati informatici 4.0: il ruolo del metaverso</span> <span class="hours-badge">4h</span></li>
             </ul>
         </details>
 
         <details>
             <summary>Principi di crittografia e crittanalisi</summary>
             <ul class="module-list">
-                <li class="module-item"><span>Cybersicurezza e crittografia: definizioni</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Crittografia simmetrica (DES, Triple DES, AES)</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Crittografia asimmetrica (RSA)</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Applicazioni crittografia: hashing, firma digitale, steganografia, blockchain</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Protocollo SSL: evoluzioni ed applicazioni</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Attacchi alle password</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Cybersicurezza e crittografia: definizioni</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Crittografia simmetrica (DES, Triple DES, AES)</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Crittografia asimmetrica (RSA)</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Applicazioni della crittografia: hashing, firma digitale, steganografia, blockchain</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Protocollo SSL: evoluzioni ed applicazioni</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Attacchi alle password</span> <span class="hours-badge">4h</span></li>
             </ul>
         </details>
 
         <details>
             <summary>Sicurezza delle reti</summary>
             <ul class="module-list">
-                <li class="module-item"><span>Architetture di rete</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Reti locali e WAN: indirizzamento e routing</span> <span class="hours-badge">12h</span></li>
-                <li class="module-item"><span>Internet: OSINT introduzione e tecniche</span> <span class="hours-badge">12h</span></li>
-                <li class="module-item"><span>Attacchi alla disponibilità delle reti: DDOS</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Ransomware e data breach</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Tecniche di anonimizzazione: VPN, proxy, rete TOR e I2P</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Segregazione, segmentazione e isolamento</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Eventi, alert, anomalie ed incidenti</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Esercitazioni esami finali</span> <span class="hours-badge">16h</span></li>
+                <li class="module-item"><span class="module-text">Architetture di rete</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Reti locali e WAN: indirizzamento e routing</span> <span class="hours-badge">12h</span></li>
+                <li class="module-item"><span class="module-text">Internet: OSINT introduzione e tecniche</span> <span class="hours-badge">12h</span></li>
+                <li class="module-item"><span class="module-text">Attacchi alla disponibilità delle reti: DDOS</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Attacchi alla riservatezza e integrità delle informazioni: ransomware e data breach</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Tecniche di anonimizzazione: VPN, proxy, rete TOR e 12P</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Segregazione, segmentazione e isolamento</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Eventi, alert, anomalie ed incidenti</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Esercitazioni esami finali</span> <span class="hours-badge">16h</span></li>
             </ul>
         </details>
 
         <details>
             <summary>Sicurezza del software e del web</summary>
             <ul class="module-list">
-                <li class="module-item"><span>Malware analysis: reverse engineering, analisi statica e dinamica, sandboxing</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Cyber threat intelligence e information sharing</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Attacchi zero-day</span> <span class="hours-badge">4h</span></li>
-                <li class="module-item"><span>Prevenzione dai malware</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Attacchi app: buffer overflow, XSS, CSRF, SQL injection</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Sicurezza delle applicazioni web e dei browser</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Controlli di sicurezza: WAF, validazione input</span> <span class="hours-badge">8h</span></li>
-                <li class="module-item"><span>Test di sicurezza: metodo OWASP Top 10</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Malware analysis: introduzione al reverse engineering, analisi statica e dinamica, virtualizzazione e sandboxing</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Cyber threat intelligence e information sharing</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Attacchi zero-day</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Prevenzione dai malware: software antimalware e controllo dell'integrità</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Attacchi alle applicazioni: buffer overflow, XSS, CSRF, SQL injection, session hijacking</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Sicurezza delle applicazioni web e dei browser</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Controlli di sicurezza nelle applicazioni: validazione dell'input, WAF, sicurezza del codice e dei database</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Test di sicurezza: metodo OWASP Top 10</span> <span class="hours-badge">8h</span></li>
             </ul>
         </details>
 
         <details>
-            <summary>Digital forensics & Incident response</summary>
+            <summary>Digital forensics</summary>
             <ul class="module-list">
-                <li class="module-item"><span>Evoluzione della computer forensics e procedure</span> <span class="hours-badge">16h</span></li>
-                <li class="module-item"><span>Mobile e Cloud forensics</span> <span class="hours-badge">16h</span></li>
-                <li class="module-item"><span>Gestione dell'incidente e DFIR</span> <span class="hours-badge">16h</span></li>
-                <li class="module-item"><span>Memory e Network forensics, Timeline analysis</span> <span class="hours-badge">24h</span></li>
+                <li class="module-item"><span class="module-text">Evoluzione della computer forensics</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Strumenti giuridici, procedure, acquisizione e analisi delle prove digitali</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Analisi live e post-mortem</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Mobile forensics</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Cloud forensic</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Principali tecnologie, tools e modalità operative per l'analisi forense</span> <span class="hours-badge">8h</span></li>
+            </ul>
+        </details>
+
+        <details>
+            <summary>Incident response</summary>
+            <ul class="module-list">
+                <li class="module-item"><span class="module-text">Fasi di un attacco informatico</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Rilevazione dell'incidente</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Gestione dell'incidente: fasi e tecniche</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">DFIR: digital forensics ed incident response</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Collezione delle evidenze</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Memory forensics</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Network forensics</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Timeline analysis</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Tecniche anti-forensics</span> <span class="hours-badge">8h</span></li>
             </ul>
         </details>
 
         <details>
             <summary>Risk management</summary>
             <ul class="module-list">
-                <li class="module-item"><span>Principi generali e metodologie ISO 31000/IRAM2</span> <span class="hours-badge">32h</span></li>
-                <li class="module-item"><span>Identificazione minacce e Business impact analysis</span> <span class="hours-badge">32h</span></li>
-                <li class="module-item"><span>Risk assessment, analysis e piano di trattamento</span> <span class="hours-badge">16h</span></li>
-                <li class="module-item"><span>ISO27005 applicato</span> <span class="hours-badge">24h</span></li>
-                <li class="module-item"><span>Esercitazioni su modelli</span> <span class="hours-badge">12h</span></li>
+                <li class="module-item"><span class="module-text">Principi generali di risk management</span> <span class="hours-badge">16h</span></li>
+                <li class="module-item"><span class="module-text">Standard e metodologie di riferimento: ISO 31000 e IRAM2</span> <span class="hours-badge">16h</span></li>
+                <li class="module-item"><span class="module-text">Identificazione delle minacce e delle vulnerabilità</span> <span class="hours-badge">16h</span></li>
+                <li class="module-item"><span class="module-text">Business impact analysis</span> <span class="hours-badge">16h</span></li>
+                <li class="module-item"><span class="module-text">Risk assessment e risk analysis</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Piano di trattamento dei rischi</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Risk management applicato: ISO27005; Termini, panoramica del processo</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Risk management applicato: ISO27005; valutazione del rischio residuo</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">RISK Management applicato: risk management e organizzazioni</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">ISO 31000: tecniche delphi e brainstorming</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Esercitazioni su modelli xs</span> <span class="hours-badge">12h</span></li>
             </ul>
         </details>
 
         <details>
-            <summary>Tecnologie distribuite e Intelligenza Artificiale</summary>
+            <summary>Tecnologie distribuite e blockchain</summary>
             <ul class="module-list">
-                <li class="module-item"><span>Blockchain, Smart contract, NFT, Defi</span> <span class="hours-badge">32h</span></li>
-                <li class="module-item"><span>Regolamento europeo sull'IA e Principi IA per Cybersecurity</span> <span class="hours-badge">24h</span></li>
-                <li class="module-item"><span>Machine learning e deep learning</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Architetture e infrastrutture di riferimento</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Tecniche crittografiche applicate</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Algoritmi di consenso distribuito: PoW e POS</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Cryptoasset: caratteristiche, tecnologie e tracciamento</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Sicurezza della tecnologia blockchain</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Smart contract</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Altcoin</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Nft</span> <span class="hours-badge">4h</span></li>
+                <li class="module-item"><span class="module-text">Defi</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">metaverso</span> <span class="hours-badge">4h</span></li>
             </ul>
         </details>
 
         <details>
-            <summary>Laboratori, Certificazioni e Project Work</summary>
+            <summary>Intelligenza artificiale per la cybersecurity</summary>
             <ul class="module-list">
-                <li class="module-item"><span>Laboratorio penetration test e simulazioni</span> <span class="hours-badge">40h</span></li>
-                <li class="module-item"><span>Preparazione Certificazione ISO 27001 Lead Auditor</span> <span class="hours-badge">40h</span></li>
-                <li class="module-item"><span>Unità didattica professionalizzante in lingua inglese</span> <span class="hours-badge">28h</span></li>
-                <li class="module-item"><span>Project work Ethical hacking</span> <span class="hours-badge">36h</span></li>
+                <li class="module-item"><span class="module-text">Principi generali dell'IA per la cybersecurity</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Normativa di riferimento: regolamento europeo sull'intelligenza artificiale</span> <span class="hours-badge">16h</span></li>
+                <li class="module-item"><span class="module-text">Machine learning e deep learning</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Case studies: applicazione dell'IA nella sicurezza cibernetica e nel contrasto al cybercrime</span> <span class="hours-badge">8h</span></li>
+            </ul>
+        </details>
+
+        <details>
+            <summary>Laboratorio penetration test</summary>
+            <ul class="module-list">
+                <li class="module-item"><span class="module-text">Tecniche e strumenti per i test di penetrazione</span> <span class="hours-badge">8h</span></li>
+                <li class="module-item"><span class="module-text">Simulazioni di attacchi</span> <span class="hours-badge">16h</span></li>
+                <li class="module-item"><span class="module-text">Reporting e mitigazione delle vulnerabilità</span> <span class="hours-badge">16h</span></li>
+            </ul>
+        </details>
+
+        <details>
+            <summary>Certificazione ISO 27001: Lead Auditor</summary>
+            <ul class="module-list">
+                <li class="module-item"><span class="module-text">Preparazione alla certificazione ISO 27001 Lead Auditor</span> <span class="hours-badge">10h</span></li>
+                <li class="module-item"><span class="module-text">Metodologie di auditing</span> <span class="hours-badge">20h</span></li>
+                <li class="module-item"><span class="module-text">Standard di sicurezza e conformità</span> <span class="hours-badge">10h</span></li>
+            </ul>
+        </details>
+
+        <details>
+            <summary>Attività formative affini e integrative</summary>
+            <ul class="module-list">
+                <li class="module-item"><span class="module-text">Unità didattica professionalizzante in lingua inglese</span> <span class="hours-badge">28h</span></li>
+            </ul>
+        </details>
+
+        <details>
+            <summary>Project work</summary>
+            <ul class="module-list">
+                <li class="module-item"><span class="module-text">Project work Ethical hacking</span> <span class="hours-badge">36h</span></li>
             </ul>
         </details>
 
